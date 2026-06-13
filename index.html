@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/basicST.css">
+    <link rel="stylesheet" href="styles/headerST.css">
+    <title>DinNur</title>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="logo">
+                <img width="80px" height="60px" src="assets/LogoDin.webp" alt="">
+            </div>
+            <nav class="navigation num1">
+                <a class="home" href="#" data-key="home">Главная</a>
+                <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
+                <a class="products" href="#" data-key="products">Парфюмы</a>
+                <a class="order" href="#" data-key="order">Заказать</a>
+                <a class="contact" href="" data-key="contact">Контакты</a>
+            </nav>
+            <div class="lang-dropdown-container num1">
+                <button type="button" class="lang-dropdown-toggle">
+                    <span class="current-lang">RU</span>
+                    <span class="arrow-icon"></span>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button type="button" class="lang-option" data-lang="ru">Русский</button>
+                    <button type="button" class="lang-option" data-lang="kz">Қазақша</button>
+                    <button type="button" class="lang-option" data-lang="en">English</button>
+                </div>
+            </div>
+            <div class="menuBTN">
+                <img id="openMenu" width="30px" height="20px" src="assets/menuIMG.webp" alt="Menu">
+            </div>
+        </div>
+        <div id="mobileMenu" class="mobileMenu">
+            <div>
+                <img id="closeMenu" width="30px" height="30px" src="assets/closeIcon.svg" alt="">
+            </div>
+            <nav class="navigation num2">
+                <a class="home" href="#" data-key="home">Главная</a>
+                <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
+                <a class="products" href="#" data-key="products">Парфюмы</a>
+                <a class="order" href="#" data-key="order">Заказать</a>
+                <a class="contact" href="" data-key="contact">Контакты</a>
+            </nav>
+
+        </div>
+
+    </header>
+    <main></main>
+    <footer id="contact">
+
+
+    </footer>
+    <script src="scripts/scrolLang.js"></script>
+    <script src="scripts/mobileLang.js"></script>
+    <script src="scripts/mobileNavigation.js"></script>
+    <script src="scripts/changeLang.js"></script>
+
+</body>
+</html>

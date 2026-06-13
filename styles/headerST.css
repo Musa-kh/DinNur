@@ -1,0 +1,231 @@
+.head{
+    display: flex;
+    justify-content: space-evenly !important;
+    align-items: center;
+    background: linear-gradient(30deg,#CAF1F7,#A7E8F1,#87E0EC);
+
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation{
+    padding: 10px;
+    display: flex;
+    border-radius: 20px;
+    gap:30px;
+    /* Полупрозрачный белый фон */
+    background-color: rgba(255, 255, 255, 0.2);
+
+    /* Эффект размытия заднего плана */
+    backdrop-filter: blur(10px);
+
+    /* Поддержка для старых версий Safari */
+    -webkit-backdrop-filter: blur(10px);
+
+    /* Дополнительно: тонкая светлая рамка для реалистичности */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: ease 0.2s;
+}
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+    padding: 6px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.navigation a:hover{
+    transform: scale(1.05);
+    /* Сделали фон более прозрачным, убрав лишние фильтры и рамки для чистоты */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Контейнер для всего выпадающего списка языков */
+.lang-dropdown-container {
+    position: relative; /* Важно для позиционирования выпадающего меню */
+    display: inline-block;
+    margin-left: 20px; /* Отступ от навигации, можно настроить */
+}
+
+/* Стиль для основной кнопки-переключателя */
+.lang-dropdown-toggle {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Пространство между текстом текущего языка и стрелкой */
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+.lang-dropdown-toggle:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+}
+
+/* Стиль для текста текущего языка */
+.current-lang {
+    text-transform: uppercase; /* Отображаем язык в верхнем регистре */
+}
+
+/* Стиль для иконки стрелки (создается с помощью CSS) */
+.arrow-icon {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333; /* Стрелка вниз */
+    transition: transform 0.3s ease;
+}
+
+/* Поворот стрелки, когда выпадающий список открыт (класс 'open' будет добавляться JS) */
+.lang-dropdown-container.open .arrow-icon {
+    transform: rotate(180deg); /* Стрелка вверх */
+}
+
+/* Стиль для выпадающего меню */
+.lang-dropdown-menu {
+    display: none; /* Скрыто по умолчанию */
+    position: absolute;
+    top: 100%; /* Позиционируем под кнопкой-переключателем */
+    left: 0;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Убедимся, что меню поверх других элементов */
+    border-radius: 5px;
+    overflow: hidden; /* Для красивых скругленных углов кнопок внутри */
+    margin-top: 5px; /* Небольшой отступ между кнопкой и меню */
+    flex-direction: column; /* Располагаем кнопки вертикально */
+}
+
+/* Показать выпадающее меню, когда контейнер имеет класс 'open' (контролируется JS) */
+.lang-dropdown-container.open .lang-dropdown-menu {
+    display: flex;
+}
+
+/* Стиль для отдельных опций языка в выпадающем списке */
+.lang-option {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%; /* Занимает всю ширину выпадающего меню */
+    transition: background-color 0.2s ease;
+}
+
+.lang-option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Стиль для активного языка в выпадающем списке (опционально, для подсветки выбранного) */
+.lang-option.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Если у тебя уже есть стили для .head, убедись, что они не конфликтуют */
+/* Например, чтобы lang-dropdown-container был справа: */
+.head {
+    display: flex;
+    justify-content: space-between; /* Распределяет элементы по краям */
+    align-items: center; /* Выравнивает по центру по вертикали */
+    padding: 10px 20px; /* Пример отступов */
+}
+.menuBTN{
+    display: none;
+}
+.mobileMenu{
+    display: none;
+}
+@media (max-width: 1100px) {
+    .navigation{
+        padding: 5px;
+    }
+    .navigation a{
+        font-size: 12px;
+    }
+
+}
+@media (max-width: 900px) {
+    .navigation{
+        padding: 2px;
+    }
+    .navigation a{
+        font-size: 10px;
+    }
+
+}
+@media (max-width: 768px) {
+    .head{
+        padding: 0 50px;
+        justify-content: space-between!important;
+    }
+    .mobileMenu{
+        z-index: 99999;
+        transform: translateX(500px);
+        display: flex;
+        gap:100px;
+        height: 100vh;
+        width: 200px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+
+        /* Полупрозрачный белый фон */
+        background-color: rgba(255, 255, 255, 0.5);
+
+        /* Эффект размытия заднего плана */
+        backdrop-filter: blur(10px);
+
+        /* Поддержка для старых версий Safari */
+        -webkit-backdrop-filter: blur(10px);
+
+        /* Дополнительно: тонкая светлая рамка для реалистичности */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all ease 0.8s;
+
+
+    }
+    .mobileMenu.active{
+        transition: all ease 0.4s;
+        transform: translateX(0px);
+
+    }
+    .navigation.num1{
+        display: none;
+    }
+    .navigation.num2{
+        display: flex;
+        gap: 30px 30px;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .navigation.num2 a{
+        text-align: center;
+    }
+    .lang-dropdown-container{
+        align-items: center;
+        margin: 0 auto;
+    }
+    .menuBTN{
+        display: flex;
+    }
+}

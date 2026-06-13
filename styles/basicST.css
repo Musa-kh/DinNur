@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&family=Russo+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Playwrite England Joined ', cursive;
+}
+
+@media (max-width: 768px) {
+
+
+}
