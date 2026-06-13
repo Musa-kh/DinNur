@@ -179,52 +179,118 @@
         z-index: 99999;
         transform: translateX(500px);
         display: flex;
-        gap:100px;
+        gap: 14px;
+        justify-content: space-between;
         height: 100vh;
-        width: 200px;
+        width: min(84vw, 320px);
         position: fixed;
         right: 0;
         top: 0;
         flex-direction: column;
+        padding: 16px 14px 22px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
 
-        /* Полупрозрачный белый фон */
-        background-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(18px) saturate(180%);
+        -webkit-backdrop-filter: blur(18px) saturate(180%);
 
-        /* Эффект размытия заднего плана */
-        backdrop-filter: blur(10px);
-
-        /* Поддержка для старых версий Safari */
-        -webkit-backdrop-filter: blur(10px);
-
-        /* Дополнительно: тонкая светлая рамка для реалистичности */
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all ease 0.8s;
-
-
+        border-left: 1px solid rgba(255, 255, 255, 0.55);
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        transition: transform 0.35s ease;
     }
     .mobileMenu.active{
-        transition: all ease 0.4s;
-        transform: translateX(0px);
-
+        transform: translateX(0);
     }
     .navigation.num1{
         display: none;
     }
     .navigation.num2{
         display: flex;
-        gap: 30px 30px;
+        flex: 1;
+        gap: 30px;
         flex-direction: column;
-        width: 50%;
+        width: 100%;
         align-items: center;
-        margin: 0 auto;
+        justify-content: center;
+        margin: 0;
+        padding-top: 6px;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        box-shadow: none;
     }
     .navigation.num2 a{
+        width: 80%;
+        padding: 10px 12px;
+        border-radius: 10px;
         text-align: center;
+        color: #1f2937;
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+    }
+
+    .navigation.num2 a:hover,
+    .navigation.num2 a:focus-visible {
+        background: rgba(248, 250, 252, 0.95);
+        transform: translateX(-30px);
+
+    }
+    #closeMenu {
+        width: 22px;
+        height: 22px;
+        opacity: 0.85;
+        cursor: pointer;
+        filter: none;
     }
     .lang-dropdown-container{
+        display: flex;
+        justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        width: 100%;
+        margin: 0;
+        padding-top: 4px;
     }
+
+    .mobileMenu .lang-dropdown-toggle {
+        width: 100%;
+        max-width: 220px;
+        justify-content: space-between;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(255, 255, 255, 0.72);
+        color: #1f2937;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .mobileMenu .lang-dropdown-menu {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+        background: rgba(255, 255, 255, 0.96);
+    }
+
+    .mobileMenu .lang-option {
+        padding: 10px 12px;
+        font-size: 13px;
+        text-align: left;
+    }
+
     .menuBTN{
         display: flex;
     }

@@ -36,10 +36,37 @@ async function changeLanguage(lang) {
     });
 }
 
+function ensureLanguageMenuVisible() {
+    if (!container || !container.classList.contains('open')) return;
+
+    const mobileMenu = document.querySelector('.mobileMenu');
+    const menu = container.querySelector('.lang-dropdown-menu');
+
+    if (!mobileMenu || !menu) return;
+
+    const menuRect = menu.getBoundingClientRect();
+    const panelRect = mobileMenu.getBoundingClientRect();
+
+    if (menuRect.bottom > panelRect.bottom) {
+        const delta = menuRect.bottom - panelRect.bottom + 8;
+        mobileMenu.scrollBy({ top: delta, behavior: 'smooth' });
+    } else if (menuRect.top < panelRect.top) {
+        const delta = panelRect.top - menuRect.top + 8;
+        mobileMenu.scrollBy({ top: -delta, behavior: 'smooth' });
+    }
+}
+
 // 1. Открытие/закрытие меню при клике на основную кнопку
 toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation(); // Чтобы клик не всплывал к document
-    container.classList.toggle('open');
+    const willOpen = !container.classList.contains('open');
+    container.classList.toggle('open', willOpen);
+
+    if (willOpen) {
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => ensureLanguageMenuVisible());
+        });
+    }
 });
 
 // 2. Обработка выбора языка
