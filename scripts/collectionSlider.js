@@ -7,11 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const next = headerSlider.querySelector('.imageHeaderNext');
         const header = document.querySelector('header');
         const themeClasses = ['theme-new', 'theme-classic', 'theme-luxury'];
-        let currentIndex = 0;
+        let currentIndex = -1;
         let timerId;
 
         function showSlide(index) {
-            currentIndex = (index + slides.length) % slides.length;
+            const nextIndex = (index + slides.length) % slides.length;
+            if (nextIndex === currentIndex && slides[currentIndex]?.classList.contains('active')) return;
+
+            currentIndex = nextIndex;
 
             slides.forEach((slide, slideIndex) => {
                 slide.classList.toggle('active', slideIndex === currentIndex);
@@ -30,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function startAutoPlay() {
             stopAutoPlay();
-            timerId = window.setInterval(() => showSlide(currentIndex + 1), 3800);
         }
 
         function stopAutoPlay() {
@@ -61,6 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
         headerSlider.addEventListener('mouseleave', startAutoPlay);
         headerSlider.addEventListener('focusin', stopAutoPlay);
         headerSlider.addEventListener('focusout', startAutoPlay);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAutoPlay();
+            } else {
+                startAutoPlay();
+            }
+        });
 
         showSlide(0);
         startAutoPlay();

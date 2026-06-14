@@ -37,8 +37,8 @@ header::before {
     top: 18%;
     border-radius: 50%;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(201, 245, 238, 0.22));
-    box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.82), 0 30px 80px rgba(73, 159, 162, 0.12);
-    animation: perfumeGlow 8s ease-in-out infinite;
+    box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.76), 0 22px 52px rgba(73, 159, 162, 0.1);
+    transition: background 0.56s ease, box-shadow 0.56s ease;
 }
 
 header::after {
@@ -46,7 +46,8 @@ header::after {
     background-image:
         linear-gradient(115deg, transparent 0 42%, rgba(255, 255, 255, 0.34) 45%, transparent 48%),
         radial-gradient(circle at 48% 82%, rgba(198, 161, 91, 0.12), transparent 24%);
-    animation: silkShine 9s ease-in-out infinite;
+    opacity: 0.46;
+    transition: background-image 0.56s ease, opacity 0.56s ease;
 }
 
 .head {
@@ -64,9 +65,9 @@ header::after {
     border: 1px solid rgba(255, 255, 255, 0.68);
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.52);
-    box-shadow: 0 18px 48px rgba(24, 68, 72, 0.12);
-    backdrop-filter: blur(20px) saturate(145%);
-    -webkit-backdrop-filter: blur(20px) saturate(145%);
+    box-shadow: 0 14px 34px rgba(24, 68, 72, 0.1);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
     transform: translateX(-50%);
     animation: navDrop 0.7s ease both;
 }
@@ -115,8 +116,8 @@ header::after {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.36);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .navigation a {
@@ -223,9 +224,9 @@ header::after {
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.88);
-    box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    box-shadow: 0 18px 42px rgba(37, 79, 82, 0.12);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
     opacity: 0;
     visibility: hidden;
     transform: translateY(8px) scale(0.98);
@@ -413,8 +414,7 @@ header::after {
     background:
         radial-gradient(circle at 42% 28%, rgba(255, 255, 255, 0.92), transparent 17%),
         linear-gradient(145deg, rgba(143, 228, 235, 0.56), rgba(246, 216, 222, 0.36));
-    box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.68), 0 34px 90px rgba(73, 159, 162, 0.16);
-    animation: liquidAura 7s ease-in-out infinite;
+    box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.62), 0 24px 58px rgba(73, 159, 162, 0.12);
     transition: background 0.56s ease, box-shadow 0.56s ease;
 }
 
@@ -428,39 +428,34 @@ header.theme-new {
 header.theme-new .imageHeader::before {
     background:
         radial-gradient(circle at 42% 28%, rgba(255, 255, 255, 0.94), transparent 17%),
-        url("../assets/backroundHead.svg") center / 112% 112% no-repeat,
         linear-gradient(145deg, rgba(185, 238, 203, 0.68), rgba(229, 251, 234, 0.52));
-    box-shadow: inset 0 0 64px rgba(255, 255, 255, 0.72), 0 34px 90px rgba(77, 151, 103, 0.14);
+    box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.68), 0 24px 58px rgba(77, 151, 103, 0.11);
 }
 
 header.theme-luxury {
     background:
-        radial-gradient(circle at 12% 18%, rgba(255, 224, 151, 0.34), transparent 30%),
-        radial-gradient(circle at 88% 28%, rgba(224, 145, 74, 0.2), transparent 34%),
-        radial-gradient(circle at 58% 84%, rgba(255, 240, 198, 0.28), transparent 28%),
+        radial-gradient(circle at 14% 18%, rgba(255, 224, 151, 0.24), transparent 28%),
+        radial-gradient(circle at 88% 30%, rgba(224, 145, 74, 0.15), transparent 30%),
         linear-gradient(135deg, #fffdf9 0%, #fff6e9 42%, #fff0de 100%);
 }
 
 header.theme-luxury::before {
     background: linear-gradient(145deg, rgba(255, 247, 226, 0.86), rgba(236, 178, 104, 0.2));
-    box-shadow: inset 0 0 62px rgba(255, 255, 255, 0.8), 0 30px 84px rgba(170, 105, 52, 0.13);
+    box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.74), 0 22px 54px rgba(170, 105, 52, 0.1);
 }
 
 header.theme-luxury::after {
     background-image:
         linear-gradient(115deg, transparent 0 42%, rgba(255, 248, 226, 0.38) 45%, transparent 48%),
-        radial-gradient(circle at 30% 22%, rgba(255, 214, 133, 0.13), transparent 18%),
-        radial-gradient(circle at 82% 70%, rgba(207, 122, 55, 0.1), transparent 24%),
-        radial-gradient(circle at 48% 82%, rgba(248, 195, 102, 0.17), transparent 24%);
+        radial-gradient(circle at 48% 82%, rgba(248, 195, 102, 0.14), transparent 22%);
+    opacity: 0.44;
 }
 
 header.theme-luxury .imageHeader::before {
     background:
         radial-gradient(circle at 42% 28%, rgba(255, 255, 255, 0.94), transparent 17%),
-        url("../assets/backroundHead.svg") center / 112% 112% no-repeat,
-        radial-gradient(circle at 64% 66%, rgba(224, 147, 63, 0.22), transparent 34%),
         linear-gradient(145deg, rgba(246, 202, 132, 0.45), rgba(255, 239, 210, 0.42));
-    box-shadow: inset 0 0 66px rgba(255, 255, 255, 0.7), 0 36px 94px rgba(165, 103, 47, 0.13);
+    box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.66), 0 24px 58px rgba(165, 103, 47, 0.1);
 }
 
 header.theme-luxury .head,
@@ -517,19 +512,18 @@ header.theme-luxury .heroAction {
 .imageHeaderSlider::before {
     content: "";
     position: absolute;
-    inset: 2%;
+    inset: 9%;
     z-index: 0;
-    background: rgba(175, 226, 202, 0.32);
-    mask: url("../assets/backroundHead.svg") center / contain no-repeat;
-    -webkit-mask: url("../assets/backroundHead.svg") center / contain no-repeat;
-    opacity: 0.8;
+    border-radius: 50%;
+    background: rgba(175, 226, 202, 0.18);
+    opacity: 0.58;
     pointer-events: none;
     transition: background 0.56s ease, opacity 0.56s ease;
 }
 
 header.theme-luxury .imageHeaderSlider::before {
-    background: linear-gradient(145deg, rgba(250, 205, 130, 0.42), rgba(209, 125, 58, 0.2));
-    opacity: 0.82;
+    background: rgba(231, 164, 88, 0.18);
+    opacity: 0.62;
 }
 
 .imageHeaderSlide {
@@ -556,8 +550,7 @@ header.theme-luxury .imageHeaderSlider::before {
     width: min(96%, 540px);
     height: min(96%, 540px);
     object-fit: contain;
-    filter: drop-shadow(0 30px 34px rgba(37, 79, 82, 0.14));
-    animation: bottleFloat 5.8s ease-in-out infinite;
+    filter: drop-shadow(0 22px 24px rgba(37, 79, 82, 0.12));
 }
 
 .imageHeaderCollection {
@@ -571,9 +564,9 @@ header.theme-luxury .imageHeaderSlider::before {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.66);
     color: var(--ink);
-    box-shadow: 0 16px 34px rgba(37, 79, 82, 0.14);
-    backdrop-filter: blur(16px) saturate(145%);
-    -webkit-backdrop-filter: blur(16px) saturate(145%);
+    box-shadow: 0 12px 24px rgba(37, 79, 82, 0.12);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
     cursor: pointer;
     font-size: 14px;
     font-weight: 900;
@@ -605,9 +598,9 @@ header.theme-luxury .imageHeaderSlider::before {
     border: 1px solid rgba(255, 255, 255, 0.72);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.46);
-    box-shadow: 0 14px 28px rgba(37, 79, 82, 0.12);
-    backdrop-filter: blur(14px) saturate(145%);
-    -webkit-backdrop-filter: blur(14px) saturate(145%);
+    box-shadow: 0 10px 20px rgba(37, 79, 82, 0.1);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
     cursor: pointer;
     opacity: 0.72;
     transform: translateY(-50%);
@@ -670,8 +663,8 @@ header.theme-luxury .imageHeaderSlider::before {
     border: 1px solid rgba(255, 255, 255, 0.66);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.38);
-    backdrop-filter: blur(14px) saturate(145%);
-    -webkit-backdrop-filter: blur(14px) saturate(145%);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
     transform: translateX(-50%);
 }
 
@@ -1017,6 +1010,19 @@ header.theme-luxury .imageHeaderSlider::before {
     .paragHead br {
         display: none;
     }
+}
+
+.head,
+.navigation,
+.lang-dropdown-toggle,
+.lang-dropdown-menu,
+.imageHeader::after,
+.imageHeaderCollection,
+.imageHeaderNav,
+.imageHeaderDots,
+.mobileMenu {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
