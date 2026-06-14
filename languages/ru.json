@@ -1,7 +1,16 @@
 {
-    "home": "Главная",
-    "acquaintance": "Знакомство",
-    "products": "Парфюмы",
-    "order": "Заказать",
-    "contact": "Контакты"
+  "home": "Главная",
+  "acquaintance": "Знакомство",
+  "products": "Парфюмы",
+  "order": "Заказать",
+  "contact": "Контакты",
+  "lang_ru": "Русский",
+  "lang_kz": "Қазақша",
+  "lang_en": "English",
+  "eyebrow": "European fragrance house",
+  "title": "Essens",
+  "description": "Европейская компания <br> Просто прикоснись, просто попробуй",
+  "col_new": "Новый продукт",
+  "col_classic": "Классика",
+  "col_luxury": "Люксовая"
 }

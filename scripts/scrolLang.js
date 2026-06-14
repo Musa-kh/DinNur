@@ -31,7 +31,7 @@ async function changeLanguage(lang) {
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (data[key]) {
-            element.textContent = data[key];
+            element.innerHTML = data[key];
         }
     });
 }

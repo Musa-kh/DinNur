@@ -1,8 +1,16 @@
 {
-    "home": "Home",
-    "acquaintance": "About Us",
-    "products": "Perfumes",
-    "order": "Order Now",
-    "contact": "Contacts"
+  "home": "Home",
+  "acquaintance": "About Us",
+  "products": "Perfumes",
+  "order": "Order",
+  "contact": "Contacts",
+  "lang_ru": "Russian",
+  "lang_kz": "Kazakh",
+  "lang_en": "English",
+  "eyebrow": "European fragrance house",
+  "title": "Essens",
+  "description": "European company <br> Just touch, just try",
+  "col_new": "New product",
+  "col_classic": "Classic",
+  "col_luxury": "Luxury"
 }
-
