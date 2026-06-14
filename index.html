@@ -59,7 +59,27 @@
             </p>
             <a class="heroAction" href="#" data-key="order">Заказать</a>
             <div class="imageHeader">
-                <img src="assets/backroundHead.svg" alt="">
+                <div class="imageHeaderSlider" aria-label="Коллекции парфюмов">
+                    <div class="imageHeaderSlide active">
+                        <img src="assets/newprodPer.webp" alt="Новый продукт">
+                        <button class="imageHeaderCollection" type="button">Новый продукт</button>
+                    </div>
+                    <div class="imageHeaderSlide">
+                        <img src="assets/classicPer.webp" alt="Классика">
+                        <button class="imageHeaderCollection" type="button">Классика</button>
+                    </div>
+                    <div class="imageHeaderSlide">
+                        <img src="assets/luxuryPer.webp" alt="Люксовая коллекция">
+                        <button class="imageHeaderCollection" type="button">Люксовая</button>
+                    </div>
+                    <button class="imageHeaderNav imageHeaderPrev" type="button" aria-label="Предыдущая коллекция"></button>
+                    <button class="imageHeaderNav imageHeaderNext" type="button" aria-label="Следующая коллекция"></button>
+                    <div class="imageHeaderDots" aria-label="Выбор коллекции">
+                        <button class="imageHeaderDot active" type="button" aria-label="Новый продукт"></button>
+                        <button class="imageHeaderDot" type="button" aria-label="Классика"></button>
+                        <button class="imageHeaderDot" type="button" aria-label="Люксовая"></button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -72,5 +92,6 @@
     <script src="scripts/mobileLang.js"></script>
     <script src="scripts/mobileNavigation.js"></script>
     <script src="scripts/changeLang.js"></script>
+    <script src="scripts/collectionSlider.js"></script>
 </body>
 </html>
