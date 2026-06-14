@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const dots = Array.from(headerSlider.querySelectorAll('.imageHeaderDot'));
         const prev = headerSlider.querySelector('.imageHeaderPrev');
         const next = headerSlider.querySelector('.imageHeaderNext');
+        const header = document.querySelector('header');
+        const themeClasses = ['theme-new', 'theme-classic', 'theme-luxury'];
         let currentIndex = 0;
         let timerId;
 
@@ -19,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.classList.toggle('active', dotIndex === currentIndex);
                 dot.setAttribute('aria-current', dotIndex === currentIndex ? 'true' : 'false');
             });
+
+            if (header) {
+                header.classList.remove(...themeClasses);
+                header.classList.add(themeClasses[currentIndex]);
+            }
         }
 
         function startAutoPlay() {

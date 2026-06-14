@@ -19,6 +19,7 @@ header {
         radial-gradient(circle at 88% 28%, rgba(143, 228, 235, 0.42), transparent 34%),
         linear-gradient(135deg, #fbfffd 0%, #eefbf8 42%, #fff7f8 100%);
     isolation: isolate;
+    transition: background 0.56s ease;
 }
 
 header::before,
@@ -414,6 +415,76 @@ header::after {
         linear-gradient(145deg, rgba(143, 228, 235, 0.56), rgba(246, 216, 222, 0.36));
     box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.68), 0 34px 90px rgba(73, 159, 162, 0.16);
     animation: liquidAura 7s ease-in-out infinite;
+    transition: background 0.56s ease, box-shadow 0.56s ease;
+}
+
+header.theme-new {
+    background:
+        radial-gradient(circle at 12% 18%, rgba(220, 247, 232, 0.66), transparent 30%),
+        radial-gradient(circle at 88% 28%, rgba(169, 235, 212, 0.42), transparent 34%),
+        linear-gradient(135deg, #fbfffd 0%, #edf9f0 46%, #f7fff8 100%);
+}
+
+header.theme-new .imageHeader::before {
+    background:
+        radial-gradient(circle at 42% 28%, rgba(255, 255, 255, 0.94), transparent 17%),
+        url("../assets/backroundHead.svg") center / 112% 112% no-repeat,
+        linear-gradient(145deg, rgba(185, 238, 203, 0.68), rgba(229, 251, 234, 0.52));
+    box-shadow: inset 0 0 64px rgba(255, 255, 255, 0.72), 0 34px 90px rgba(77, 151, 103, 0.14);
+}
+
+header.theme-luxury {
+    background:
+        radial-gradient(circle at 12% 18%, rgba(255, 224, 151, 0.34), transparent 30%),
+        radial-gradient(circle at 88% 28%, rgba(224, 145, 74, 0.2), transparent 34%),
+        radial-gradient(circle at 58% 84%, rgba(255, 240, 198, 0.28), transparent 28%),
+        linear-gradient(135deg, #fffdf9 0%, #fff6e9 42%, #fff0de 100%);
+}
+
+header.theme-luxury::before {
+    background: linear-gradient(145deg, rgba(255, 247, 226, 0.86), rgba(236, 178, 104, 0.2));
+    box-shadow: inset 0 0 62px rgba(255, 255, 255, 0.8), 0 30px 84px rgba(170, 105, 52, 0.13);
+}
+
+header.theme-luxury::after {
+    background-image:
+        linear-gradient(115deg, transparent 0 42%, rgba(255, 248, 226, 0.38) 45%, transparent 48%),
+        radial-gradient(circle at 30% 22%, rgba(255, 214, 133, 0.13), transparent 18%),
+        radial-gradient(circle at 82% 70%, rgba(207, 122, 55, 0.1), transparent 24%),
+        radial-gradient(circle at 48% 82%, rgba(248, 195, 102, 0.17), transparent 24%);
+}
+
+header.theme-luxury .imageHeader::before {
+    background:
+        radial-gradient(circle at 42% 28%, rgba(255, 255, 255, 0.94), transparent 17%),
+        url("../assets/backroundHead.svg") center / 112% 112% no-repeat,
+        radial-gradient(circle at 64% 66%, rgba(224, 147, 63, 0.22), transparent 34%),
+        linear-gradient(145deg, rgba(246, 202, 132, 0.45), rgba(255, 239, 210, 0.42));
+    box-shadow: inset 0 0 66px rgba(255, 255, 255, 0.7), 0 36px 94px rgba(165, 103, 47, 0.13);
+}
+
+header.theme-luxury .head,
+header.theme-luxury .navigation,
+header.theme-luxury .lang-dropdown-toggle,
+header.theme-luxury .menuBTN,
+header.theme-luxury .imageHeaderDots,
+header.theme-luxury .imageHeaderNav {
+    border-color: rgba(255, 238, 199, 0.78);
+    background: rgba(255, 248, 232, 0.54);
+    box-shadow: 0 18px 48px rgba(170, 91, 25, 0.13);
+}
+
+header.theme-luxury .eyebrowHead {
+    border-color: rgba(218, 132, 35, 0.34);
+    background: rgba(255, 246, 222, 0.62);
+    color: #9a5a17;
+    box-shadow: 0 12px 26px rgba(218, 132, 35, 0.12);
+}
+
+header.theme-luxury .heroAction {
+    border-color: rgba(255, 217, 139, 0.5);
+    background: linear-gradient(135deg, #4a2712, #b66a23);
+    box-shadow: 0 18px 36px rgba(182, 106, 35, 0.24);
 }
 
 .imageHeader::after {
@@ -443,9 +514,28 @@ header::after {
     place-items: center;
 }
 
+.imageHeaderSlider::before {
+    content: "";
+    position: absolute;
+    inset: 2%;
+    z-index: 0;
+    background: rgba(175, 226, 202, 0.32);
+    mask: url("../assets/backroundHead.svg") center / contain no-repeat;
+    -webkit-mask: url("../assets/backroundHead.svg") center / contain no-repeat;
+    opacity: 0.8;
+    pointer-events: none;
+    transition: background 0.56s ease, opacity 0.56s ease;
+}
+
+header.theme-luxury .imageHeaderSlider::before {
+    background: linear-gradient(145deg, rgba(250, 205, 130, 0.42), rgba(209, 125, 58, 0.2));
+    opacity: 0.82;
+}
+
 .imageHeaderSlide {
     position: absolute;
     inset: 0;
+    z-index: 1;
     display: grid;
     place-items: center;
     opacity: 0;
