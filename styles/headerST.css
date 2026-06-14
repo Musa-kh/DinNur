@@ -459,15 +459,37 @@ header.theme-luxury .imageHeader::before {
     box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.66), 0 24px 58px rgba(165, 103, 47, 0.1);
 }
 
+header.theme-new .head,
+header.theme-classic .head,
 header.theme-luxury .head,
+header.theme-new .navigation,
+header.theme-classic .navigation,
 header.theme-luxury .navigation,
+header.theme-new .lang-dropdown-toggle,
+header.theme-classic .lang-dropdown-toggle,
 header.theme-luxury .lang-dropdown-toggle,
+header.theme-new .menuBTN,
+header.theme-classic .menuBTN,
 header.theme-luxury .menuBTN,
+header.theme-new .imageHeaderDots,
+header.theme-classic .imageHeaderDots,
 header.theme-luxury .imageHeaderDots,
+header.theme-new .imageHeaderNav,
+header.theme-classic .imageHeaderNav,
 header.theme-luxury .imageHeaderNav {
-    border-color: rgba(255, 238, 199, 0.78);
-    background: rgba(255, 248, 232, 0.54);
-    box-shadow: 0 18px 48px rgba(170, 91, 25, 0.13);
+    border-color: rgba(255, 255, 255, 0.68);
+    background: rgba(255, 255, 255, 0.52);
+    box-shadow: 0 14px 34px rgba(24, 68, 72, 0.1);
+}
+
+header.theme-new .mobileMenu,
+header.theme-classic .mobileMenu,
+header.theme-luxury .mobileMenu {
+    border-color: rgba(255, 255, 255, 0.68);
+    background:
+        radial-gradient(circle at 20% 8%, rgba(246, 216, 222, 0.72), transparent 34%),
+        rgba(255, 255, 255, 0.68);
+    box-shadow: -24px 0 60px rgba(24, 68, 72, 0.16);
 }
 
 header.theme-luxury .eyebrowHead {
@@ -896,16 +918,16 @@ header.theme-luxury .imageHeaderSlider::before {
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        margin-top: 50px;
         align-items: stretch;
         gap: 12px;
         padding: 0;
         border: none;
         border-radius: 0;
-        background: transparent;
-        box-shadow: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
+        background: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
     .navigation.num2 a {
