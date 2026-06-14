@@ -74,6 +74,8 @@ options.forEach(option => {
     option.addEventListener('click', () => {
         const selectedLang = option.getAttribute('data-lang'); // Получаем код (ru, kz, en)
         
+        localStorage.setItem('selectedLanguage', selectedLang);
+
         // Обновляем текст в кнопке
         currentLangText.textContent = selectedLang.toUpperCase();
         
@@ -86,7 +88,9 @@ options.forEach(option => {
 });
 
 // Устанавливаем язык по умолчанию при загрузке страницы
-changeLanguage('ru');
+const savedLanguage = localStorage.getItem('selectedLanguage') || 'ru';
+currentLangText.textContent = savedLanguage.toUpperCase();
+changeLanguage(savedLanguage);
 
 // 3. Закрытие меню при клике в любом другом месте экрана
 document.addEventListener('click', () => {
