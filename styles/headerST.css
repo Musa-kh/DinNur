@@ -138,8 +138,7 @@
     color: #fff;
 }
 
-/* Если у тебя уже есть стили для .head, убедись, что они не конфликтуют */
-/* Например, чтобы lang-dropdown-container был справа: */
+
 .head {
     display: flex;
     justify-content: space-between; /* Распределяет элементы по краям */
@@ -152,6 +151,46 @@
 .mobileMenu{
     display: none;
 }
+
+.titleHead{
+    font-size: 106px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: #111827;
+    grid-area: titleHead;
+    align-self: end;
+}
+.paragHead{
+    font-size: 44px;
+    font-weight: 400;
+    margin: 15px 0 0 0;
+    line-height: 1.5;
+    color: #4b5563;
+    grid-area: paragHead;
+    align-self: start;
+}
+
+.headgrid{
+    display: grid;
+    grid-template-areas:
+    "titleHead imageHeader"
+    "paragHead imageHeader";
+    grid-template-columns: 1.2fr auto;
+    align-items: center;
+    gap: 0 40px;
+    margin: 60px 0 0 0 !important;
+    padding: 0 0 0 10%;
+}
+
+.imageHeader{
+    max-width: 100%;
+    display: block;
+    grid-area: imageHeader;
+    justify-self: center;
+}
+
 @media (max-width: 1100px) {
     .navigation{
         padding: 5px;
