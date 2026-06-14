@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,17 +13,17 @@
     <header>
         <div class="head">
             <div class="logo">
-                <img width="80px" height="60px" src="assets/LogoDin.webp" alt="">
+                <img width="80" height="60" src="assets/LogoDin.webp" alt="DinNur">
             </div>
             <nav class="navigation num1">
                 <a class="home" href="#" data-key="home">Главная</a>
                 <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
                 <a class="products" href="#" data-key="products">Парфюмы</a>
                 <a class="order" href="#" data-key="order">Заказать</a>
-                <a class="contact" href="" data-key="contact">Контакты</a>
+                <a class="contact" href="#contact" data-key="contact">Контакты</a>
             </nav>
             <div class="lang-dropdown-container num1">
-                <button type="button" class="lang-dropdown-toggle">
+                <button type="button" class="lang-dropdown-toggle" aria-label="Выбрать язык">
                     <span class="current-lang">RU</span>
                     <span class="arrow-icon"></span>
                 </button>
@@ -34,31 +34,34 @@
                 </div>
             </div>
             <div class="menuBTN">
-                <img id="openMenu" width="30px" height="20px" src="assets/menuIMG.webp" alt="Menu">
+                <img id="openMenu" width="30" height="20" src="assets/menuIMG.webp" alt="Menu">
             </div>
         </div>
+
         <div id="mobileMenu" class="mobileMenu">
-            <div>
-                <img id="closeMenu" width="30px" height="30px" src="assets/closeIcon.svg" alt="">
+            <div class="mobileMenuTop">
+                <img id="closeMenu" width="30" height="30" src="assets/closeIcon.svg" alt="Close menu">
             </div>
             <nav class="navigation num2">
                 <a class="home" href="#" data-key="home">Главная</a>
                 <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
                 <a class="products" href="#" data-key="products">Парфюмы</a>
                 <a class="order" href="#" data-key="order">Заказать</a>
-                <a class="contact" href="" data-key="contact">Контакты</a>
+                <a class="contact" href="#contact" data-key="contact">Контакты</a>
             </nav>
         </div>
+
         <div class="headgrid">
-           <h1 class="titleHead">Essens</h1>
+            <p class="eyebrowHead">European fragrance house</p>
+            <h1 class="titleHead">Essens</h1>
             <p class="paragHead">Европейская компания <br>
-                Просто прикосьнись, просто попробуй
+                Просто прикоснись, просто попробуй
             </p>
+            <a class="heroAction" href="#" data-key="order">Заказать</a>
             <div class="imageHeader">
-                <img  src="assets/backroundHead.svg" alt="">
+                <img src="assets/backroundHead.svg" alt="">
             </div>
         </div>
-
     </header>
     <main></main>
     <footer id="contact">
@@ -69,6 +72,5 @@
     <script src="scripts/mobileLang.js"></script>
     <script src="scripts/mobileNavigation.js"></script>
     <script src="scripts/changeLang.js"></script>
-
 </body>
 </html>
