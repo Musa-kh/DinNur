@@ -940,8 +940,9 @@ header.theme-luxury .imageHeaderSlider::before {
         width: 100%;
         justify-content: space-between;
         min-height: 52px;
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.66);
+        border: none;
+        background: transparent;
+        box-shadow: none;
     }
 
     .mobileMenu .lang-dropdown-menu {

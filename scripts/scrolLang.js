@@ -92,3 +92,72 @@ changeLanguage('ru');
 document.addEventListener('click', () => {
     container.classList.remove('open');
 });
+
+// --- Slider Logic ---
+// Находим элементы слайдера
+const slides = document.querySelectorAll('.imageHeaderSlide');
+const dots = document.querySelectorAll('.imageHeaderDot');
+const prevBtn = document.querySelector('.imageHeaderPrev');
+const nextBtn = document.querySelector('.imageHeaderNext');
+const header = document.querySelector('header');
+const themeClasses = ['theme-new', 'theme-classic', 'theme-luxury'];
+let currentIndex = 0;
+let slideInterval;
+
+/**
+ * Функция обновления активного слайда, точки и темы хедера
+ * @param {number} index - индекс нового слайда
+ */
+function updateSlider(index) {
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    
+    if (header) {
+        header.classList.remove(...themeClasses);
+        if (themeClasses[index]) {
+            header.classList.add(themeClasses[index]);
+        }
+    }
+
+    currentIndex = index;
+}
+
+function nextSlide() {
+    const newIndex = (currentIndex + 1) % slides.length;
+    updateSlider(newIndex);
+}
+
+function startAutoSlide() {
+    stopAutoSlide();
+    slideInterval = setInterval(nextSlide, 3000);
+}
+
+function stopAutoSlide() {
+    clearInterval(slideInterval);
+}
+
+// Кнопки навигации
+if (nextBtn) nextBtn.addEventListener('click', () => {
+    nextSlide();
+    startAutoSlide(); // Сбрасываем таймер при ручном переключении
+});
+
+if (prevBtn) prevBtn.addEventListener('click', () => {
+    const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlider(newIndex);
+    startAutoSlide();
+});
+
+// Клик по точкам
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        updateSlider(index);
+        startAutoSlide();
+    });
+});
+
+// Запуск автопрокрутки, если слайды существуют
+if (slides.length > 0) {
+    updateSlider(0); // Устанавливаем начальную тему
+    startAutoSlide();
+}
