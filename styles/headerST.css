@@ -300,7 +300,7 @@ header::after {
     width: min(1180px, calc(100% - 44px));
     min-height: 100vh;
     margin: 0 auto;
-    padding: 148px 0 72px;
+    padding: 148px 0 102px;
     display: grid;
     grid-template-areas:
         "eyebrowHead imageHeader"
@@ -362,6 +362,7 @@ header::after {
     align-items: center;
     justify-content: center;
     margin-top: 34px;
+    margin-bottom: 24px;
     padding: 0 28px;
     overflow: hidden;
     border: 1px solid rgba(198, 161, 91, 0.34);
@@ -980,7 +981,7 @@ header.theme-luxury .imageHeaderSlider::before {
     .headgrid {
         width: calc(100% - 28px);
         min-height: 100vh;
-        padding: 118px 0 48px;
+        padding: 118px 0 98px;
         grid-template-areas:
             "imageHeader"
             "eyebrowHead"
