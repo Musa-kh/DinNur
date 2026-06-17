@@ -1,0 +1,149 @@
+.acquaintance-section {
+    position: relative;
+    padding: clamp(80px, 12vw, 160px) 0;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(246, 216, 222, 0.62), transparent 30%),
+        radial-gradient(circle at 88% 28%, rgba(143, 228, 235, 0.42), transparent 34%),
+        linear-gradient(135deg, #fbfffd 0%, #eefbf8 42%, #fff7f8 100%);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.acquaintance-section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 420px;
+    height: 420px;
+    right: 5%;
+    bottom: 5%;
+    border-radius: 50%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(201, 245, 238, 0.15));
+    box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.6), 0 20px 50px rgba(73, 159, 162, 0.08);
+    opacity: 0.6;
+}
+
+.acquaintance-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image:
+        linear-gradient(115deg, transparent 0 45%, rgba(255, 255, 255, 0.25) 48%, transparent 51%),
+        radial-gradient(circle at 20% 80%, rgba(198, 161, 91, 0.08), transparent 25%);
+    opacity: 0.4;
+}
+
+.acquaintance-section > div {
+    position: relative;
+    z-index: 2;
+    max-width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "img about"
+        "img about"
+        "img btn";
+    grid-template-columns: minmax(320px, 1fr) 1.2fr;
+    grid-template-rows: auto auto auto;
+    column-gap: clamp(40px, 8vw, 120px);
+    align-items: center;
+}
+
+.peopIMG {
+    grid-area: img;
+    width: 100%;
+    aspect-ratio: 0.9;
+    object-fit: cover;
+    border-radius: 36% 64% 45% 55% / 54% 43% 57% 46%;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow:
+        inset 0 0 40px rgba(255, 255, 255, 0.5),
+        0 30px 60px rgba(37, 79, 82, 0.12);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.6s ease;
+    animation: blobMorph 8s ease-in-out infinite alternate;
+}
+
+@keyframes blobMorph {
+    0% { border-radius: 36% 64% 45% 55% / 54% 43% 57% 46%; }
+    100% { border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%; }
+}
+
+.peopIMG:hover {
+    transform: scale(1.03) rotate(-1deg);
+}
+
+.aboutP {
+    grid-area: about;
+    padding-top: 20px;
+}
+
+.aboutP h2 {
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 800;
+    color: var(--ink);
+    margin: 0 0 24px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.aboutP p {
+    font-size: clamp(16px, 1.8vw, 24px);
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0;
+    max-width: 640px;
+}
+
+.acquaintancebtn {
+    grid-area: btn;
+    align-self: start;
+    width: fit-content;
+    min-height: 56px;
+    padding: 0 42px;
+    margin-top: 32px;
+    border: 1px solid rgba(198, 161, 91, 0.34);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1d332f, #2c6967);
+    color: #fffdf7;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 18px 34px rgba(44, 105, 103, 0.18);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+}
+
+.acquaintancebtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 42px rgba(44, 105, 103, 0.24);
+    filter: brightness(1.1);
+}
+
+@media (max-width: 992px) {
+    .acquaintance-section > div {
+        grid-template-areas:
+            "img"
+            "about"
+            "btn";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .peopIMG {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .aboutP {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acquaintancebtn {
+        margin: 0 auto;
+        align-self: center;
+    }
+}
