@@ -1,6 +1,8 @@
 .acquaintance-section {
     position: relative;
+    z-index: 1;
     padding: clamp(80px, 12vw, 160px) 0;
+    margin-top: -150px; /* Перекрытие для бесшовности */
     background:
         radial-gradient(circle at 12% 18%, rgba(246, 216, 222, 0.62), transparent 30%),
         radial-gradient(circle at 88% 28%, rgba(143, 228, 235, 0.42), transparent 34%),
@@ -8,6 +10,7 @@
     overflow: hidden;
     isolation: isolate;
 }
+
 
 .acquaintance-section::before {
     content: "";

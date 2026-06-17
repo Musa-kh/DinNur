@@ -26,8 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (header) {
+                const currentTheme = themeClasses[currentIndex];
                 header.classList.remove(...themeClasses);
-                header.classList.add(themeClasses[currentIndex]);
+                header.classList.add(currentTheme);
+                document.body.classList.remove(...themeClasses);
+                document.body.classList.add(currentTheme);
             }
         }
 

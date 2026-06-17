@@ -10,48 +10,48 @@
     <link rel="stylesheet" href="styles/acquaintance-sectionST.css">
     <title>DinNur</title>
 </head>
-<body>
+<body class="theme-new">
+    <div class="head">
+        <div class="logo">
+            <img width="80" height="60" src="assets/LogoDin.webp" alt="DinNur">
+        </div>
+        <nav class="navigation num1">
+            <a class="home" href="#" data-key="home">Главная</a>
+            <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
+            <a class="products" href="#" data-key="products">Парфюмы</a>
+            <a class="order" href="#" data-key="order">Заказать</a>
+            <a class="contact" href="#contact" data-key="contact">Контакты</a>
+        </nav>
+        <div class="lang-dropdown-container num1">
+            <button type="button" class="lang-dropdown-toggle" aria-label="Выбрать язык">
+                <span class="current-lang">RU</span>
+                <span class="arrow-icon"></span>
+            </button>
+            <div class="lang-dropdown-menu">
+                <button type="button" class="lang-option" data-lang="ru" data-key="lang_ru">Русский</button>
+                <button type="button" class="lang-option" data-lang="kz" data-key="lang_kz">Қазақша</button>
+                <button type="button" class="lang-option" data-lang="en" data-key="lang_en">English</button>
+            </div>
+        </div>
+        <div class="menuBTN">
+            <img id="openMenu" width="30" height="20" src="assets/menuIMG.webp" alt="Menu">
+        </div>
+    </div>
+
+    <div id="mobileMenu" class="mobileMenu">
+        <div class="mobileMenuTop">
+            <img id="closeMenu" width="30" height="30" src="assets/closeIcon.svg" alt="Close menu">
+        </div>
+        <nav class="navigation num2">
+            <a class="home" href="#" data-key="home">Главная</a>
+            <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
+            <a class="products" href="#" data-key="products">Парфюмы</a>
+            <a class="order" href="#" data-key="order">Заказать</a>
+            <a class="contact" href="#contact" data-key="contact">Контакты</a>
+        </nav>
+    </div>
+
     <header class="theme-new">
-        <div class="head">
-            <div class="logo">
-                <img width="80" height="60" src="assets/LogoDin.webp" alt="DinNur">
-            </div>
-            <nav class="navigation num1">
-                <a class="home" href="#" data-key="home">Главная</a>
-                <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
-                <a class="products" href="#" data-key="products">Парфюмы</a>
-                <a class="order" href="#" data-key="order">Заказать</a>
-                <a class="contact" href="#contact" data-key="contact">Контакты</a>
-            </nav>
-            <div class="lang-dropdown-container num1">
-                <button type="button" class="lang-dropdown-toggle" aria-label="Выбрать язык">
-                    <span class="current-lang">RU</span>
-                    <span class="arrow-icon"></span>
-                </button>
-                <div class="lang-dropdown-menu">
-                    <button type="button" class="lang-option" data-lang="ru" data-key="lang_ru">Русский</button>
-                    <button type="button" class="lang-option" data-lang="kz" data-key="lang_kz">Қазақша</button>
-                    <button type="button" class="lang-option" data-lang="en" data-key="lang_en">English</button>
-                </div>
-            </div>
-            <div class="menuBTN">
-                <img id="openMenu" width="30" height="20" src="assets/menuIMG.webp" alt="Menu">
-            </div>
-        </div>
-
-        <div id="mobileMenu" class="mobileMenu">
-            <div class="mobileMenuTop">
-                <img id="closeMenu" width="30" height="30" src="assets/closeIcon.svg" alt="Close menu">
-            </div>
-            <nav class="navigation num2">
-                <a class="home" href="#" data-key="home">Главная</a>
-                <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
-                <a class="products" href="#" data-key="products">Парфюмы</a>
-                <a class="order" href="#" data-key="order">Заказать</a>
-                <a class="contact" href="#contact" data-key="contact">Контакты</a>
-            </nav>
-        </div>
-
         <div class="headgrid">
             <p class="eyebrowHead" data-key="eyebrow">European fragrance house</p>
             <h1 class="titleHead" data-key="title">Essens</h1>
@@ -84,6 +84,7 @@
             </div>
         </div>
     </header>
+    <div class="flowing-border"></div>
     <main>
         <section class="acquaintance-section">
             <div>

@@ -12,6 +12,7 @@
 
 header {
     position: relative;
+    z-index: 2;
     min-height: 100vh;
     overflow: hidden;
     background:
@@ -19,6 +20,8 @@ header {
         radial-gradient(circle at 88% 28%, rgba(143, 228, 235, 0.42), transparent 34%),
         linear-gradient(135deg, #fbfffd 0%, #eefbf8 42%, #fff7f8 100%);
     transition: background 0.56s ease;
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 header::before,
@@ -458,32 +461,32 @@ header.theme-luxury .imageHeader::before {
     box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.66), 0 24px 58px rgba(165, 103, 47, 0.1);
 }
 
-header.theme-new .head,
-header.theme-classic .head,
-header.theme-luxury .head,
-header.theme-new .navigation,
-header.theme-classic .navigation,
-header.theme-luxury .navigation,
-header.theme-new .lang-dropdown-toggle,
-header.theme-classic .lang-dropdown-toggle,
-header.theme-luxury .lang-dropdown-toggle,
-header.theme-new .menuBTN,
-header.theme-classic .menuBTN,
-header.theme-luxury .menuBTN,
-header.theme-new .imageHeaderDots,
-header.theme-classic .imageHeaderDots,
-header.theme-luxury .imageHeaderDots,
-header.theme-new .imageHeaderNav,
-header.theme-classic .imageHeaderNav,
-header.theme-luxury .imageHeaderNav {
+body.theme-new .head,
+body.theme-classic .head,
+body.theme-luxury .head,
+body.theme-new .navigation,
+body.theme-classic .navigation,
+body.theme-luxury .navigation,
+body.theme-new .lang-dropdown-toggle,
+body.theme-classic .lang-dropdown-toggle,
+body.theme-luxury .lang-dropdown-toggle,
+body.theme-new .menuBTN,
+body.theme-classic .menuBTN,
+body.theme-luxury .menuBTN,
+body.theme-new .imageHeaderDots,
+body.theme-classic .imageHeaderDots,
+body.theme-luxury .imageHeaderDots,
+body.theme-new .imageHeaderNav,
+body.theme-classic .imageHeaderNav,
+body.theme-luxury .imageHeaderNav {
     border-color: rgba(255, 255, 255, 0.68);
     background: rgba(255, 255, 255, 0.52);
     box-shadow: 0 14px 34px rgba(24, 68, 72, 0.1);
 }
 
-header.theme-new .mobileMenu,
-header.theme-classic .mobileMenu,
-header.theme-luxury .mobileMenu {
+body.theme-new .mobileMenu,
+body.theme-classic .mobileMenu,
+body.theme-luxury .mobileMenu {
     border-color: rgba(255, 255, 255, 0.68);
     background:
         radial-gradient(circle at 20% 8%, rgba(246, 216, 222, 0.72), transparent 34%),
@@ -1065,4 +1068,45 @@ header.theme-luxury .imageHeaderSlider::before {
         scroll-behavior: auto !important;
         transition-duration: 0.001ms !important;
     }
+}
+
+/* Эффект мягкого перелива между секциями */
+.flowing-border {
+    position: relative;
+    width: 100%;
+    height: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.flowing-border::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: radial-gradient(ellipse at center, var(--border-color, rgba(255, 255, 255, 0.3)) 0%, transparent 75%);
+    opacity: 0.6;
+    filter: blur(50px);
+    transition: background 1.5s ease, opacity 1.5s ease;
+    animation: borderFlow 15s ease-in-out infinite alternate;
+}
+
+@keyframes borderFlow {
+    0% { transform: scale(0.7, 0.4) translateY(-20px); opacity: 0.3; }
+    50% { transform: scale(1.3, 0.7) translateY(20px); opacity: 0.7; }
+    100% { transform: scale(0.8, 0.5) translateY(-10px); opacity: 0.4; }
+}
+
+body.theme-new .flowing-border {
+    --border-color: rgba(169, 235, 212, 0.9);
+}
+
+body.theme-classic .flowing-border {
+    --border-color: rgba(143, 228, 235, 0.85);
+}
+
+body.theme-luxury .flowing-border {
+    --border-color: rgba(248, 195, 102, 0.95);
 }
