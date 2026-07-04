@@ -11,6 +11,8 @@ const translationsCache = {};
  * @param {string} lang - код языка (ru, kz, en)
  */
 async function changeLanguage(lang) {
+    if (!lang) return;
+    
     // 1. Проверяем, загружен ли уже этот язык, если нет — скачиваем
     if (!translationsCache[lang]) {
         try {
@@ -57,44 +59,48 @@ function ensureLanguageMenuVisible() {
 }
 
 // 1. Открытие/закрытие меню при клике на основную кнопку
-toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Чтобы клик не всплывал к document
-    const willOpen = !container.classList.contains('open');
-    container.classList.toggle('open', willOpen);
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Чтобы клик не всплывал к document
+        const willOpen = !container.classList.contains('open');
+        container.classList.toggle('open', willOpen);
 
-    if (willOpen) {
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => ensureLanguageMenuVisible());
-        });
-    }
-});
+        if (willOpen) {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => ensureLanguageMenuVisible());
+            });
+        }
+    });
+}
 
 // 2. Обработка выбора языка
-options.forEach(option => {
-    option.addEventListener('click', () => {
-        const selectedLang = option.getAttribute('data-lang'); // Получаем код (ru, kz, en)
-        
-        localStorage.setItem('selectedLanguage', selectedLang);
+if (options) {
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedLang = option.getAttribute('data-lang'); // Получаем код (ru, kz, en)
+            
+            localStorage.setItem('selectedLanguage', selectedLang);
 
-        // Обновляем текст в кнопке
-        currentLangText.textContent = selectedLang.toUpperCase();
-        
-        // Вызываем функцию смены языка
-        changeLanguage(selectedLang);
-        
-        // Закрываем меню
-        container.classList.remove('open');
+            // Обновляем текст в кнопке
+            if (currentLangText) currentLangText.textContent = selectedLang.toUpperCase();
+            
+            // Вызываем функцию смены языка
+            changeLanguage(selectedLang);
+            
+            // Закрываем меню
+            if (container) container.classList.remove('open');
+        });
     });
-});
+}
 
 // Устанавливаем язык по умолчанию при загрузке страницы
 const savedLanguage = localStorage.getItem('selectedLanguage') || 'ru';
-currentLangText.textContent = savedLanguage.toUpperCase();
+if (currentLangText) currentLangText.textContent = savedLanguage.toUpperCase();
 changeLanguage(savedLanguage);
 
 // 3. Закрытие меню при клике в любом другом месте экрана
 document.addEventListener('click', () => {
-    container.classList.remove('open');
+    if (container) container.classList.remove('open');
 });
 
 // --- Slider Logic ---

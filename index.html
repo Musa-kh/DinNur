@@ -11,19 +11,20 @@
     <link rel="stylesheet" href="styles/products-sectionST.css">
     <link rel="stylesheet" href="styles/order-sectionST.css">
     <link rel="stylesheet" href="styles/footerST.css">
-    <title>DinNur</title>
+    <title data-key="title_main">DinNur</title>
 </head>
-<body class="theme-new">
+<body class="theme-new" id="home">
     <div class="head">
         <div class="logo">
             <img width="80" height="60" src="assets/LogoDin.webp" alt="DinNur">
         </div>
         <nav class="navigation num1">
-            <a class="home" href="#" data-key="home">Главная</a>
-            <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
+            <a class="home" href="#home" data-key="home">Главная</a>
+            <a class="acquaintance" href="#acquaintance-section" data-key="acquaintance">Знакомство</a>
             <a class="products" href="#products" data-key="products">Парфюмы</a>
             <a class="order" href="#order" data-key="order">Заказать</a>
             <a class="contact" href="#contact" data-key="contact">Контакты</a>
+            <a class="partner-btn" href="partner.html" data-key="partner">Стать партнером</a>
         </nav>
         <div class="lang-dropdown-container num1">
             <button type="button" class="lang-dropdown-toggle" aria-label="Выбрать язык">
@@ -46,11 +47,12 @@
             <img id="closeMenu" width="30" height="30" src="assets/closeIcon.svg" alt="Close menu">
         </div>
         <nav class="navigation num2">
-            <a class="home" href="#" data-key="home">Главная</a>
-            <a class="acquaintance" href="#" data-key="acquaintance">Знакомство</a>
+            <a class="home" href="#home" data-key="home">Главная</a>
+            <a class="acquaintance" href="#acquaintance-section" data-key="acquaintance">Знакомство</a>
             <a class="products" href="#products" data-key="products">Парфюмы</a>
             <a class="order" href="#order" data-key="order">Заказать</a>
             <a class="contact" href="#contact" data-key="contact">Контакты</a>
+            <a class="partner-btn" href="partner.html" data-key="partner">Стать партнером</a>
         </nav>
     </div>
 
@@ -89,14 +91,14 @@
     </header>
     <div class="flowing-border"></div>
     <main>
-        <section class="acquaintance-section">
+        <section id="acquaintance-section" class="acquaintance-section">
             <div>
                 <img class="peopIMG" src="assets/people.png" alt="people">
                 <div class="aboutP">
-                    <h2>Dinara</h2>
-                    <p>Essence — это известный немецкий бренд бюджетной декоративной косметики, основанный в 2001 году компанией Cosnova Beauty. Марка популярна во всем мире благодаря сочетанию ультрадоступных цен, высокого качества и регулярного выпуска трендовых новинок. </p>
+                    <h2 data-key="about_title">Dinara</h2>
+                    <p data-key="about_text">Essence — это известный немецкий бренд бюджетной декоративной косметики, основанный в 2001 году компанией Cosnova Beauty. Марка популярна во всем мире благодаря сочетанию ультрадоступных цен, высокого качества и регулярного выпуска трендовых новинок. </p>
                 </div>
-                <button class="acquaintancebtn" type="button">
+                <button class="acquaintancebtn" type="button" data-key="about_btn">
                     Ознакомление
                 </button>
             </div>
@@ -105,8 +107,8 @@
         <section class="products-section" id="products" aria-label="Каталог парфюмов">
             <div class="products-shell">
                 <div class="products-heading">
-                    <p class="products-eyebrow">Essens collection</p>
-                    <h2>Парфюмы</h2>
+                    <p class="products-eyebrow" data-key="products_eyebrow">Essens collection</p>
+                    <h2 data-key="products_title">Парфюмы</h2>
                 </div>
                 <div class="products-gallery">
                     <figure class="product-photo product-photo-tall product-photo-feature">
@@ -134,21 +136,21 @@
                     <img src="assets/person2.webp" alt="Dinara" loading="lazy" decoding="async">
                 </div>
                 <div class="order-content">
-                    <p class="order-eyebrow">Personal order</p>
-                    <h2>Выберите удобный способ заказа</h2>
-                    <p class="order-text">
+                    <p class="order-eyebrow" data-key="order_eyebrow">Personal order</p>
+                    <h2 data-key="order_title">Выберите удобный способ заказа</h2>
+                    <p class="order-text" data-key="order_description">
                         Оформите покупку самостоятельно или напишите мне, если нужна помощь с выбором аромата.
                     </p>
                     <div class="order-tags" aria-label="Преимущества заказа">
-                        <span>Подбор аромата</span>
-                        <span>Быстрый заказ</span>
-                        <span>WhatsApp</span>
+                        <span data-key="tag_scent">Подбор аромата</span>
+                        <span data-key="tag_fast">Быстрый заказ</span>
+                        <span data-key="tag_whatsapp">WhatsApp</span>
                     </div>
                     <div class="order-actions" aria-label="Способы заказа">
-                        <a class="order-button order-button-primary" href="https://my.essens.com/eshop" target="_blank" rel="noopener">
+                        <a class="order-button order-button-primary" href="https://my.essens.com/eshop" target="_blank" rel="noopener" data-key="btn_self">
                             Заказать самому
                         </a>
-                        <a class="order-button order-button-secondary" href="https://wa.me/77007729289" target="_blank" rel="noopener">
+                        <a class="order-button order-button-secondary" href="https://wa.me/77007729289" target="_blank" rel="noopener" data-key="btn_help">
                             Моя помощь
                         </a>
                     </div>
@@ -159,12 +161,12 @@
     <footer class="site-footer" id="contact">
         <div class="footer-shell">
             <div class="footer-brand">
-                <a class="footer-logo" href="#" aria-label="DinNur">
+                <a class="footer-logo" href="#home" aria-label="DinNur">
                     <img src="assets/LogoDin.webp" alt="DinNur">
                 </a>
                 <div>
-                    <p class="footer-eyebrow">DinNur Essens</p>
-                    <p class="footer-text">Связь, подбор ароматов и помощь с заказом.</p>
+                    <p class="footer-eyebrow" data-key="footer_title">DinNur Essens</p>
+                    <p class="footer-text" data-key="footer_text">Связь, подбор ароматов и помощь с заказом.</p>
                 </div>
             </div>
             <nav class="footer-socials" aria-label="Социальные сети">

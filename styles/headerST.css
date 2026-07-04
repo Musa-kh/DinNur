@@ -168,6 +168,17 @@ header::after {
     transform: scaleX(1);
 }
 
+.navigation a.partner-btn {
+    background: var(--gold);
+    color: #fff;
+    margin-left: 8px;
+}
+
+.navigation a.partner-btn:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
 .lang-dropdown-container {
     position: relative;
     flex-shrink: 0;
@@ -955,6 +966,13 @@ header.theme-luxury .imageHeaderSlider::before {
     .navigation.num2 a:hover,
     .navigation.num2 a:focus-visible {
         transform: translateX(-6px);
+    }
+
+    .navigation.num2 a.partner-btn {
+        background: var(--gold);
+        color: #fff;
+        margin-left: 0;
+        justify-content: center;
     }
 
     .mobileMenu .lang-dropdown-container {

@@ -7,16 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/basicST.css">
     <link rel="stylesheet" href="styles/acquaintance-pageST.css">
-    <title>Ознакомление</title>
+    <title data-key="title_acquaintance">Ознакомление</title>
 </head>
 <body class="acquaintance-page">
     <main class="acquaintance-video-wrap">
         <video class="acquaintance-video" controls preload="metadata">
             <source src="assets/video/WIN_20260704_14_25_38_Pro.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
+            <span data-key="no_video">Ваш браузер не поддерживает видео.</span>
         </video>
-        <a class="back-button" href="index.html">Назад</a>
+        <a class="back-button" href="index.html" data-key="back">Назад</a>
     </main>
+    <script src="scripts/scrolLang.js"></script>
     <script src="scripts/acquaintanceReturn.js"></script>
 </body>
 </html>
