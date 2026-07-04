@@ -8,7 +8,7 @@ const translationsCache = {};
 
 /**
  * Функция для смены языка
- * @param {string} lang - код языка (ru, kz, en)
+ * @param {string} lang - код языка (ru, kz)
  */
 async function changeLanguage(lang) {
     if (!lang) return;
@@ -29,11 +29,15 @@ async function changeLanguage(lang) {
 
     const data = translationsCache[lang];
 
-    // 2. Ищем все элементы с атрибутом data-key и меняем их текст
+    // 2. Ищем все элементы с атрибутом data-key и меняем их текст или атрибуты
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (data[key]) {
-            element.innerHTML = data[key];
+            if (element.tagName === 'IMG') {
+                element.src = data[key];
+            } else {
+                element.innerHTML = data[key];
+            }
         }
     });
 }
@@ -77,7 +81,7 @@ if (toggleBtn) {
 if (options) {
     options.forEach(option => {
         option.addEventListener('click', () => {
-            const selectedLang = option.getAttribute('data-lang'); // Получаем код (ru, kz, en)
+            const selectedLang = option.getAttribute('data-lang'); // Получаем код (ru, kz)
             
             localStorage.setItem('selectedLanguage', selectedLang);
 

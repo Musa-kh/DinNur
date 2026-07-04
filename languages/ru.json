@@ -6,7 +6,6 @@
   "contact": "Контакты",
   "lang_ru": "Русский",
   "lang_kz": "Қазақша",
-  "lang_en": "English",
   "eyebrow": "European fragrance house",
   "title": "Essens",
   "description": "Европейская компания <br> Просто прикоснись, просто попробуй",
@@ -38,5 +37,7 @@
   "write_whatsapp": "Написать на WhatsApp",
   "no_video": "Ваш браузер не поддерживает видео.",
   "fill_fields": "Пожалуйста, заполните все поля",
-  "whatsapp_message": "Здравствуйте \nМожно по подробнее про заработок в Essens"
+  "whatsapp_message": "Здравствуйте \nМожно по подробнее про заработок в Essens",
+  "img_2434": "assets/IMG_2434.webp",
+  "img_2435": "assets/IMG_2435.webp"
 }
