@@ -111,6 +111,14 @@
     object-fit: contain;
     border-radius: 6px;
     background: #fffaf7;
+    pointer-events: none;
+}
+
+.product-photo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
 .product-photo:hover {
@@ -213,4 +221,42 @@
         grid-column: 1;
         margin-top: 0;
     }
+}
+
+.products-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(42px, 6vw, 78px);
+}
+
+.assortment-button {
+    position: relative;
+    min-width: 220px;
+    min-height: 56px;
+    padding: 0 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(198, 161, 91, 0.45);
+    border-radius: 999px;
+    background: var(--gold);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 16px 34px rgba(198, 161, 91, 0.24);
+    transition: transform 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
+}
+
+.assortment-button:hover {
+    transform: translateY(-4px);
+    background: var(--ink);
+    border-color: var(--ink);
+    box-shadow: 0 22px 48px rgba(22, 33, 31, 0.28);
+}
+
+.assortment-button:active {
+    transform: translateY(-1px);
 }
