@@ -6,6 +6,16 @@ const options = document.querySelectorAll('.lang-option');
 // Объект для кэширования загруженных переводов
 const translationsCache = {};
 
+function getLangCode(lang) {
+    const codeMap = {
+        ru: 'RU',
+        kz: 'KZ',
+        turkey: 'TR',
+        tr: 'TR'
+    };
+    return codeMap[lang] || (lang ? lang.toUpperCase() : 'RU');
+}
+
 /**
  * Функция для смены языка
  * @param {string} lang - код языка (ru, kz)
@@ -86,7 +96,7 @@ if (options) {
             localStorage.setItem('selectedLanguage', selectedLang);
 
             // Обновляем текст в кнопке
-            if (currentLangText) currentLangText.textContent = selectedLang.toUpperCase();
+            if (currentLangText) currentLangText.textContent = getLangCode(selectedLang);
             
             // Вызываем функцию смены языка
             changeLanguage(selectedLang);
@@ -99,7 +109,7 @@ if (options) {
 
 // Устанавливаем язык по умолчанию при загрузке страницы
 const savedLanguage = localStorage.getItem('selectedLanguage') || 'ru';
-if (currentLangText) currentLangText.textContent = savedLanguage.toUpperCase();
+if (currentLangText) currentLangText.textContent = getLangCode(savedLanguage);
 changeLanguage(savedLanguage);
 
 // 3. Закрытие меню при клике в любом другом месте экрана
