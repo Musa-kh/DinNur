@@ -5,6 +5,7 @@ const options = document.querySelectorAll('.lang-option');
 
 // Объект для кэширования загруженных переводов
 const translationsCache = {};
+window.translationsCache = translationsCache;
 
 function getLangCode(lang) {
     const codeMap = {
@@ -14,6 +15,20 @@ function getLangCode(lang) {
         tr: 'TR'
     };
     return codeMap[lang] || (lang ? lang.toUpperCase() : 'RU');
+}
+
+function updateLanguageVideos(lang) {
+    document.querySelectorAll('[data-default-video]').forEach(video => {
+        const defaultVideo = video.getAttribute('data-default-video');
+        const turkeyVideo = video.getAttribute('data-turkey-video');
+        const nextVideo = lang === 'turkey' && turkeyVideo ? turkeyVideo : defaultVideo;
+        const source = video.querySelector('source');
+
+        if (!nextVideo || !source || source.getAttribute('src') === nextVideo) return;
+
+        source.setAttribute('src', nextVideo);
+        video.load();
+    });
 }
 
 /**
@@ -50,6 +65,8 @@ async function changeLanguage(lang) {
             }
         }
     });
+
+    updateLanguageVideos(lang);
 }
 
 function ensureLanguageMenuVisible() {
@@ -77,6 +94,12 @@ if (toggleBtn) {
     toggleBtn.addEventListener('click', (e) => {
         e.stopPropagation(); // Чтобы клик не всплывал к document
         const willOpen = !container.classList.contains('open');
+
+        // Close country dropdown if open
+        document.querySelectorAll('.country-dropdown-container.open').forEach((countryBox) => {
+            countryBox.classList.remove('open');
+        });
+
         container.classList.toggle('open', willOpen);
 
         if (willOpen) {

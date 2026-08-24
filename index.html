@@ -63,6 +63,18 @@
             <a class="contact" href="#contact" data-key="contact">Контакты</a>
             <a class="partner-btn" href="https://wa.me/77007729289" target="_blank" rel="noopener" data-key="partner">Стать партнером</a>
         </nav>
+        <div class="country-dropdown-container num1">
+            <button type="button" class="country-dropdown-toggle" aria-label="Выбрать страну">
+                <span class="country-icon" aria-hidden="true">🌐</span>
+                <span class="current-country" data-key="country_kz">Казахстан</span>
+                <span class="arrow-icon"></span>
+            </button>
+            <div class="country-dropdown-menu">
+                <button type="button" class="country-option" data-country="kazakhstan" data-key="country_kz">Казахстан</button>
+                <button type="button" class="country-option" data-country="turkey" data-key="country_tr">Турция</button>
+                <button type="button" class="country-option" data-country="other" data-key="country_other">Другая страна</button>
+            </div>
+        </div>
         <div class="lang-dropdown-container num1">
             <button type="button" class="lang-dropdown-toggle" aria-label="Выбрать язык">
                 <span class="current-lang">RU</span>
@@ -100,7 +112,6 @@
             <p class="paragHead" data-key="description">Европейская компания <br>
                 Просто прикоснись, просто попробуй
             </p>
-            <a class="heroAction" href="#order" data-key="order">Заказать</a>
             <div class="imageHeader">
                 <div class="imageHeaderSlider" aria-label="Коллекции парфюмов">
                     <div class="imageHeaderSlide active">
@@ -143,6 +154,43 @@
                 </button>
             </div>
 
+        </section>
+        <section class="business-section" id="business" aria-label="Создайте свой успешный бизнес">
+            <div class="business-shell">
+                <div class="business-content">
+                    <h2 data-key="business_title">Создайте свой успешный бизнес</h2>
+                    <p class="business-intro" data-key="business_intro">
+                        Если вы любите красоту так же, как мы, и мечтаете об обществе единомышленников, стабильном доходе и гибком графике &mdash; вы в правильном месте. Мы предлагаем не просто работу, а готовый инструмент для трансформации вашей жизни.
+                    </p>
+                    <ul class="business-benefits" aria-label="Преимущества партнерства">
+                        <li>
+                            <span class="business-benefit-mark" aria-hidden="true">&#10003;</span>
+                            <span data-key="business_benefit_1"><strong>Свободный график и гибкость:</strong> Работайте из любой точки, уделяйте время семье и развивайтесь в комфортном для себя темпе.</span>
+                        </li>
+                        <li>
+                            <span class="business-benefit-mark" aria-hidden="true">&#10003;</span>
+                            <span data-key="business_benefit_2"><strong>Готовая система роста:</strong> Вы получаете полноценное обучение, поддержку опытной команды и проверенные пошаговые алгоритмы для старта с нуля.</span>
+                        </li>
+                        <li>
+                            <span class="business-benefit-mark" aria-hidden="true">&#10003;</span>
+                            <span data-key="business_benefit_3"><strong>Доход без границ:</strong> Зарабатывайте на рекомендации качественного продукта, который легко продает сам себя, и стройте собственную международную партнерскую сеть.</span>
+                        </li>
+                        <li>
+                            <span class="business-benefit-mark" aria-hidden="true">&#10003;</span>
+                            <span data-key="business_benefit_4"><strong>Признание и окружение:</strong> Станьте частью сильного сообщества, путешествуйте, участвуйте в бонусных программах и достигайте целей вместе с нами.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="business-cta">
+                    <h3 data-key="business_question">Готовы к переменам?</h3>
+                    <p data-key="business_cta_text">
+                        заполните короткую анкету, получите доступ к обучению и начните развивать собственный красивый бизнес прямо сейчас!
+                    </p>
+                    <a class="business-button" href="https://www.essenseurope.kz/r-950347697" target="_blank" rel="noopener" data-key="business_button">
+                        Хочу в команду
+                    </a>
+                </div>
+            </div>
         </section>
         <section class="products-section" id="products" aria-label="Каталог парфюмов">
             <div class="products-shell">
@@ -201,9 +249,6 @@
                 <div class="order-content">
                     <p class="order-eyebrow" data-key="order_eyebrow">Personal order</p>
                     <h2 data-key="order_title">Выберите удобный способ заказа</h2>
-                    <p class="order-text" data-key="order_description">
-                        Оформите покупку самостоятельно или напишите мне, если нужна помощь с выбором аромата.
-                    </p>
                     <div class="order-tags" aria-label="Преимущества заказа">
                         <span data-key="tag_scent">Подбор аромата</span>
                         <span data-key="tag_fast">Быстрый заказ</span>
@@ -211,12 +256,15 @@
                     </div>
                     <div class="order-actions" aria-label="Способы заказа">
                         <a class="order-button order-button-primary" href="https://my.essens.com/eshop" target="_blank" rel="noopener" data-key="btn_self">
-                            Заказать самому
+                            Стать партнером самому
                         </a>
                         <a class="order-button order-button-secondary" href="https://wa.me/77007729289" target="_blank" rel="noopener" data-key="btn_help">
                             Моя помощь
                         </a>
                     </div>
+                    <p class="order-afterword" data-key="order_afterword">
+                        Настоящий парфюм — это не просто красивый флакон на полке. Это ваш невидимый автограф, эмоции, настроение и уверенность, которые вы надеваете с самым первым утренним распылением.
+                    </p>
                 </div>
             </div>
         </section>
@@ -254,6 +302,7 @@
             </nav>
         </div>
     </footer>
+    <script src="scripts/countrySelector.js"></script>
     <script src="scripts/scrolLang.js"></script>
     <script src="scripts/mobileLang.js"></script>
     <script src="scripts/mobileNavigation.js"></script>

@@ -28,6 +28,30 @@
 </head>
 <body class="acquaintance-page">
     <main class="acquaintance-content-wrap">
+        <div class="acq-video-wrap">
+            <video class="acq-top-video" controls playsinline preload="metadata" data-default-video="assets/video/IMG_3746.MP4" data-turkey-video="assets/video/IMG_3828.MP4">
+                <source src="assets/video/IMG_3746.MP4" type="video/mp4">
+                <span data-key="no_video">Ваш браузер не поддерживает видео.</span>
+            </video>
+        </div>
+        <section class="acq-video-note" data-country-content="kazakhstan,other" aria-label="Информация о продажах и партнерской скидке">
+            <p data-key="acq_video_note_p1">
+                <strong>- Продажи</strong> - покупаем со скидкой партнера, продаем по цене каталога.
+            </p>
+            <p data-key="acq_video_note_p2">
+                💰💰💰 С одного флакона вы получаете около 6000-8000 тенге.
+            </p>
+            <p data-key="acq_video_note_p3">
+                <strong>- Экономия и заработок на покупке</strong><br>
+                Став партнером, вы покупаете со своего интернет-магазина со скидкой 40%.
+            </p>
+        </section>
+        <section class="acq-video-note" data-country-content="turkey" aria-label="Информация о продажах и партнерской скидке" hidden>
+            <p data-key="acq_video_note_tr_p3">
+                <strong>Продажи</strong><br>
+                💰💰💰 Покупаем на сайте духи за 1050 TL и продаем за 1580 TL! Прибыль примерно 500 TL с одного флакона!
+            </p>
+        </section>
         <div class="acquaintance-container">
             <div class="acq-row">
                 <section class="acq-item">
@@ -45,9 +69,9 @@
                     <h2 data-key="acq_title_2">2. Что вы получаете, став партнером компании?</h2>
                     <ul class="acq-list">
                         <li data-key="acq_list_2_1">Доход от «живых» продаж: Зарабатывайте моментальную прибыль, рекомендуя качественную продукцию друзьям и клиентам.</li>
-                        <li data-key="acq_list_2_2">Кэшбэк с каждой покупки: Возвращайте часть потраченных средств обратно на счет личного кабинета и используйте их для оплаты следующих заказов.</li>
+                        <li data-key="acq_list_2_2" data-country-content="kazakhstan,other">Кэшбэк с каждой покупки: Возвращайте часть потраченных средств обратно на счет личного кабинета и используйте их для оплаты следующих заказов.</li>
                         <li data-key="acq_list_2_3">Зарплата от 3% до 28%: Получайте официальный процент от оборота вашей команды.</li>
-                        <li data-key="acq_list_2_4">Фиксированная выплата: 135 тенге за каждый балл, сформированный вашей командой.</li>
+                        <li data-key="acq_list_2_4" data-country-content="kazakhstan,other">Фиксированная выплата: 135 тенге за каждый балл, сформированный вашей командой.</li>
                         <li data-key="acq_list_2_5">13-я зарплата: Дополнительное годовое вознаграждение для активных и целеустремленных лидеров.</li>
                         <li data-key="acq_list_2_6">Бесплатное обучение и поддержка: Готовая пошаговая система работы и помощь наставников на каждом этапе.</li>
                     </ul>
@@ -62,8 +86,9 @@
                     <h2 data-key="acq_title_3">3. Выгоды и акции для новых партнеров</h2>
                     <p data-key="acq_text_3">Зарегистрировавшись в компании, вы сразу включаетесь в систему специальных предложений:</p>
                     <ul class="acq-list">
-                        <li data-key="acq_list_3_1">Дополнительные скидки в первый месяц: Максимально выгодные условия для комфортного знакомства с продукцией.</li>
-                        <li data-key="acq_list_3_2">Специальная акция для новичков «1+1=3»: Покупайте два продукта и получайте третий абсолютно бесплатно!</li>
+                        <li data-key="acq_list_3_1" data-country-content="kazakhstan,other">Дополнительные скидки в первый месяц: Максимально выгодные условия для комфортного знакомства с продукцией.</li>
+                        <li data-key="acq_list_3_2" data-country-content="kazakhstan,other">Специальная акция для новичков «1+1=3»: Покупайте два продукта и получайте третий абсолютно бесплатно!</li>
+                        <li data-key="acq_list_3_tr_1" data-country-content="turkey" hidden>Если вы приобретете бизнес-набор, и 5 зарегистрированных вами человек также приобретут бизнес-набор, вы получите бонус в размере <strong>5000 TL</strong> на свой счет.</li>
                     </ul>
                 </section>
                 <div class="acq-papic">
@@ -106,6 +131,7 @@
             <a class="back-button" href="index.html" data-key="back">Назад</a>
         </div>
     </main>
+    <script src="scripts/countrySelector.js"></script>
     <script src="scripts/scrolLang.js"></script>
     <script src="scripts/acquaintanceReturn.js"></script>
 </body>
