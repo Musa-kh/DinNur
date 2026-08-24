@@ -63,7 +63,7 @@
 }
 
 .order-photo::after {
-    content: "Dinara";
+    content: "Dinara Agapashaevna";
     position: absolute;
     right: clamp(18px, 3vw, 34px);
     bottom: clamp(18px, 3vw, 34px);
